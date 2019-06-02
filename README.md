@@ -1,6 +1,6 @@
 # APES-Optimizer
 
-Add link to paper
+This repository is an implementation of the summarization model presented in [Question Answering as an Automatic Evaluation Metric for News Article Summarization](https://www.aclweb.org/anthology/N19-1395).
 
 This repository started as a fork from [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py).
 You can find helpful [discussions](https://github.com/OpenNMT/OpenNMT-py/issues/340) and [explanations](https://github.com/OpenNMT/OpenNMT-py/blob/master/docs/source/Summarization.md) in the repository. 
@@ -19,4 +19,19 @@ Generation is done using the `translate.py` script
 
 ```python translate.py -gpu 0 -src_seq_length_trunc 400 -batch_size 20 -beam_size 5 -model path/to/model/ada6_bridge_oldcopy_tagged_acc_54.17_ppl_11.17_e20.pt -src path/to/data/test.txt.src -output testout/file.out -min_length 35 -verbose -stepwise_penalty -coverage_penalty summary -length_penalty wu -alpha 0.9 -beta 0.5 -gamma 0.5 -verbose -block_ngram_repeat 3 -ignore_when_blocking "." "</t>" "<t>" > translating.txt 2>&1 &```
 
-A more up-to-date explanations will be added.
+# Citation
+```
+@inproceedings{eyal-etal-2019-question,
+    title = "Question Answering as an Automatic Evaluation Metric for News Article Summarization",
+    author = "Eyal, Matan  and
+      Baumel, Tal  and
+      Elhadad, Michael",
+    booktitle = "Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+    month = jun,
+    year = "2019",
+    address = "Minneapolis, Minnesota",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/N19-1395",
+    pages = "3938--3948",
+}
+```
